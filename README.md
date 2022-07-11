@@ -75,7 +75,7 @@ module load gcc/10.2.0 git/2.28.0-nodocs
 module save
 ```
 
-> **⚠️ Warning**
+> **⚠️ Warning**  
 > This will also affect your job submission scripts too!
 
 
@@ -89,7 +89,7 @@ The `python/3.8.6` module has poetry pre-installed and is the easiest and safest
 
 There are **a lot** of different variations of Conda. Spartan has both [miniconda](https://docs.conda.io/en/latest/miniconda.html) and [anaconda](https://www.anaconda.com/products/distribution) available as modules. However, I highly recommend [mambaforge](https://github.com/conda-forge/miniforge#mambaforge). It is relatively lightweight and uses the [mamba](https://github.com/mamba-org/mamba) package manager, which is much faster than `conda` and almost 100% compatible.
 
-> **✏️ Note**
+> **✏️ Note**  
 > As of 7 Jul 2022, there is a pending ticket requesting that mambaforge be installed as a module on Spartan.
 > The below info remains the recommended installation method until this ticket is resolved.
 
