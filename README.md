@@ -45,6 +45,14 @@ sacct -S 2022-06-10 -E 2022-06-17
 
 See `man --pager='less -p end_time' sacct` for the possible time formats that can be used.
 
+### Find out what queue ("QoS") each project has access to
+
+```sh
+sacctmgr -p list associations user=<USERNAME> format=Account,User,Partition,Qos,DefaultQOS tree | column -ts'|'
+```
+
+> Source: https://groups.google.com/g/slurm-users/c/m0EvzqScz_g/m/dJJuJpY4CgAJ
+
 ## Modules
 
 ### Collections
