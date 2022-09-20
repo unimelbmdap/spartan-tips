@@ -53,6 +53,20 @@ sacctmgr -p list associations user=<USERNAME> format=Account,User,Partition,Qos,
 
 > Source: https://groups.google.com/g/slurm-users/c/m0EvzqScz_g/m/dJJuJpY4CgAJ
 
+### Check your Fairshare scores
+
+Your fairshare, along with the resources you are requesting for a job, determines your place in the queue. For more information about fairshare scores and queue priorities [see here](https://slurm.schedmd.com/fair_tree.html).
+
+```sh
+sshare -l -U
+```
+
+Once you've submitted a job, you can see how it's priority is calculated using:
+
+```sh
+sprio -nlj <JOBID>
+```
+
 ## Modules
 
 ### Collections
