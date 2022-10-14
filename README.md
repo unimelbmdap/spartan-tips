@@ -10,6 +10,16 @@
 squeue -u $USERNAME -Stime -o "%.18i %.9P %.20j %.8u %.2t %.10M %.6D %R"
 ```
 
+### Get information about available resources to maximize the chances of your job going through instantly
+
+``` sh
+sinfo --format "%n %20E %12U %19H %6t %a %b %C %m %e" -p physical
+```
+
+Here `-p` stands for "partition". Swap it for "bigmem", "gpgpu" as necessary.
+
+You want to choose your cpus and memory such that it is fewer cpus than are available in one node, and less memory than is available at that same node. In theory, that should ensure it goes through "instantly".
+
 ### Get a rough idea when when a job would start
 
 ``` sh
@@ -45,7 +55,7 @@ sacct -S 2022-06-10 -E 2022-06-17
 
 See `man --pager='less -p end_time' sacct` for the possible time formats that can be used.
 
-### Find out what queue ("QoS") each project has access to
+### Find out what quality of service ("QoS") each project has access to
 
 ```sh
 sacctmgr -p list associations user=<USERNAME> format=Account,User,Partition,Qos,DefaultQOS tree | column -ts'|'
