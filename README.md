@@ -16,7 +16,7 @@ squeue -u $USERNAME -Stime -o "%.18i %.9P %.20j %.8u %.2t %.10M %.6D %R"
 sinfo --format "%n %20E %12U %19H %6t %a %b %C %m %e" -p physical
 ```
 
-Here `-p` stands for "partition". Swap it for "bigmem", "gpgpu" as necessary.
+Here `-p` stands for "partition". Swap it for "bigmem", "gpu-a100" as necessary.
 
 You want to choose your cpus and memory such that it is fewer cpus than are available in one node, and less memory than is available at that same node. In theory, that should ensure it goes through "instantly".
 
