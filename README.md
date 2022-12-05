@@ -26,7 +26,7 @@ You want to choose your cpus and memory such that it is fewer cpus than are avai
 sbatch --test-only -n 16 -N 1 -p physical -t 01:00:00 --wrap "hostname"
 ```
 
-Here `-p` stands for "partition". Swap it for "bigmem", "gpgpu" as necessary.
+Here `-p` stands for "partition". Swap it for "bigmem", "gpu-a100" as necessary.
 
 Note that the result is just an **estimate**. Job sumbissions from other users between now and the start time may mean your job gets pushed down the queue! For average wait times you can also check out the [Spartan weather report](https://dashboard.hpc.unimelb.edu.au/status_specs/#wait-time).
 
